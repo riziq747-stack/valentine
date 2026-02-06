@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine?</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+.card {
+  background: white;
+  padding: 35px 28px;
+  border-radius: 22px;
+  text-align: center;
+  width: 92%;
+  max-width: 420px;
+  box-shadow: 0 18px 35px rgba(0,0,0,0.18);
+}
+
+h1 {
+  color: #ff4d6d;
+  margin-bottom: 15px;
+  font-size: 1.9rem;
+}
+
+p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#yesBtn {
+  background: #ff4d6d;
+  color: white;
+}
+
+#yesBtn:hover {
+  background: #ff3355;
+  transform: scale(1.06);
+}
+
+#noBtn {
+  background: #eee;
+  color: #555;
+  position: relative;
+}
+
+.heart {
+  font-size: 2.2rem;
+  animation: float 1.5s infinite ease-in-out;
+  margin-bottom: 12px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart">❤️</div>
+    <h1>Will you be my Valentine?</h1><p>
+  I don’t know how to start this without sounding cheesy, but honestly… every time I think about this day, your name is the first thing that comes to my mind.
+</p>
+
+<p>
+  You might not realize it, but you make ordinary days feel lighter. Even small things somehow feel different when I imagine sharing them with you. I don’t need anything fancy — just your time, your smile, and the chance to be there for you.
+</p>
+
+<p>
+  I know I’m not perfect. I mess up, I overthink, and sometimes I don’t say things the right way. But if there’s one thing I’m sure about, it’s this: when it comes to you, my intentions are always sincere.
+</p>
+
+<p>
+  So today, I just want to be brave for once and ask you something simple, but meaningful to me.
+</p>
+
+<div class="buttons">
+  <button id="yesBtn" onclick="sayYes()">Yes 💖</button>
+  <button id="noBtn" onmouseover="moveButton()">No 😅</button>
+</div>
+
+  </div>  <script>
+    function sayYes() {
+      document.body.innerHTML = `
+        <div style="max-width:420px; text-align:center; color:white; padding:20px;">
+          <h1 style="font-size:2.3rem; margin-bottom:15px;">You just made me really happy 💕</h1>
+          <p style="font-size:1.05rem; line-height:1.6;">
+            Thank you for saying yes. I promise I’ll do my best to make you feel appreciated, cared for, and never taken for granted.
+          </p>
+          <p style="font-size:1.05rem; line-height:1.6;">
+            This might just be Valentine’s Day, but for me, this moment is something I’ll remember. I’m really glad it’s you.
+          </p>
+          <p style="font-size:1.1rem; margin-top:20px;">❤️</p>
+        </div>
+      `;
+    }
+
+    function moveButton() {
+      const btn = document.getElementById('noBtn');
+      const x = Math.random() * 220 - 110;
+      const y = Math.random() * 220 - 110;
+      btn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script></body>
+</html>
